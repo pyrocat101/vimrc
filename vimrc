@@ -34,3 +34,10 @@ augroup ft_python
   au FileType python setlocal define=^\s*\\(def\\\\|class\\)
   au FileType python setlocal ts=4 sts=4 sw=4
 augroup END
+
+" MacVim
+if has('gui_running')
+  set guifont=Menlo\ Regular:h14
+  let g:solarized_italic = 0
+  colorscheme solarized
+endif
