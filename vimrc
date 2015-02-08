@@ -4,7 +4,11 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+
 " General configurations -------------------------------------------------------
+
+" Show line number
+set nu
 
 " No swap file
 set noswapfile
@@ -27,33 +31,69 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-
-" UI ---------------------------------------------------------------------------
-
-" MacVim
-if has('gui_running')
-  set guifont=Menlo\ Regular:h12
-  let g:solarized_italic = 0
-  colorscheme solarized
-endif
+" Allow hidden
+set hidden
 
 
 " Keybindings ------------------------------------------------------------------
 
+" Leader
+let mapleader=','
+
 " Emacs heresy
-inoremap <c-a> <home>
-inoremap <c-e> <end>
 nnoremap <c-a> <home>
 nnoremap <c-e> <end>
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
+
+" Tabs
+nnoremap <D-n> :tabnew<CR>
+inoremap <D-n> <esc>:tabnew<CR>
+
+" Vim-ish search
+nnoremap <space> /
+vnoremap <space> /
+
+" Go to file
+let g:CommandTFileScanner='git'
+let g:CommandTMaxHeight=10
+
+" Grep
+nnoremap <D-F> :Ag<space>
+
+nnoremap <D-t> :CommandT<CR>
+nnoremap <D-p> :CommandT<CR>
+inoremap <D-t> <esc>:CommandR<CR>
+inoremap <D-p> <esc>:CommandR<CR>
+
+" Mac-ish search
+nnoremap <D-f> /
+inoremap <D-f> <esc>/
+nnoremap <D-g> n
+inoremap <D-g> <esc>n
+nnoremap <D-G> N
+inoremap <D-G> <esc>N
+nnoremap <D-d> *
+inoremap <D-d> <esc>*
+
+" Toggle comment
+nmap <D-/> <Plug>CommentaryLine
+vmap <D-/> <Plug>Commentary
+imap <D-/> <esc><Plug>CommentaryLine
 
 
 " Python -----------------------------------------------------------------------
 
 augroup ft_python
   au!
-  au FileType python setlocal define=^\s*\\(def\\\\|class\\)
-  au FileType python setlocal ts=4 sts=4 sw=4
+  au FileType python setlocal define=^\s*\\(def\\\\|class\\) ts=4 sts=4 sw=4
 augroup END
 
+" Vim --------------------------------------------------------------------------
+
+augroup ft_vim
+  au!
+  au FileType vim setlocal tw=80 cc=80
+augroup END
