@@ -40,3 +40,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-cisco-ios"]
+	path = bundle/vim-cisco-ios
+	url = https://github.com/CyCoreSystems/vim-cisco-ios.git
