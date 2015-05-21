@@ -23,7 +23,7 @@ set mouse=a
 set hlsearch
 
 " Encodings
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set fileencodings=utf-8,latin1
 
 " Tabs & spaces
 set tabstop=4
@@ -33,6 +33,9 @@ set expandtab
 
 " Allow hidden
 set hidden
+
+" Dark background
+set bg=dark
 
 
 " Keybindings ------------------------------------------------------------------
